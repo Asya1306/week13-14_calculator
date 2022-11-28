@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
@@ -12,10 +12,50 @@
 <body>
     <div class="container">
         <div class="row">
-            <div><button onclick="getSum()" class="button">Сложение</button></div>
-            <div><button onclick="getSubtr()" class="button">Вычитание</button></div>
-            <div><button onclick="getDivision()" class="button">Деление</button></div>
-            <div><button onclick="getMult()" class="button">Умножение</button></div>
+            <div><button onclick="showSumBlock()" class="button">Сложение</button></div>
+            <div><button onclick="showSubtrBlock()" class="button">Вычитание</button></div>
+            <div><button onclick="showDivisionBlock()" class="button">Деление</button></div>
+            <div><button onclick="showMultBlock()" class="button">Умножение</button></div>
+        </div>
+        <!-- сложение -->
+        <div id='blockSum' class="block-card">
+            <label for="input1sum">Первое слагаемое:</label>
+            <input id="input1sum" type="number">
+            <label for="input2sum">Второе слагаемое:</label>
+            <input id="input2sum" type="number">
+            <button onclick="sumCalc()">Считаем!</button>
+            <label for="divSumResult">Сумма:</label>
+            <div id="divSumResult"></div>
+        </div>
+        <!-- вычитание -->
+        <div id='blockSubtr' class="block-card">
+            <label for="input1subtr">Уменьшаемое:</label>
+            <input id="input1subtr" type="number">
+            <label for="input2subtr">Вычитаемое:</label>
+            <input id="input2subtr" type="number">
+            <button onclick="subtrCalc()">Считаем!</button>
+            <label for="divSubtrResult">Разность:</label>
+            <div id="divSubtrResult"></div>
+        </div>
+        <!-- деление -->
+        <div id='blockDivis' class="block-card">
+            <label for="input1divis">Делимое:</label>
+            <input id="input1divis" type="number">
+            <label for="input2divis">Делитель:</label>
+            <input id="input2divis" type="number">
+            <button onclick="divisCalc()">Считаем!</button>
+            <label for="divDivisResult">Частное:</label>
+            <div id="divDivisResult"></div>
+        </div>
+        <!-- умножение -->
+        <div id='blockMult' class="block-card">
+            <label for="input1mult">Первый множитель:</label>
+            <input id="input1mult" type="number">
+            <label for="input2mult">Второй множитель:</label>
+            <input id="input2mult" type="number">
+            <button onclick="multCalc()">Считаем!</button>
+            <label for="divMultResult">Произведение:</label>
+            <div id="divMultResult"></div>
         </div>
     </div>
     <script src="assets/js/script.js"></script>

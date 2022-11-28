@@ -1,21 +1,56 @@
 'use strict';
-function getSum() {
-    const number1 = prompt('Введите первое слагаемое','');
-    const number2 = prompt('Введите второе слагаемое','');
-    alert(`Сумма: ${+number1 + +number2}`);
+//переменные
+let variableBlockSum = document.getElementById('blockSum');
+let variableBlockSubtr = document.getElementById('blockSubtr');
+let variableBlockDivis = document.getElementById('blockDivis');
+let variableBlockMult = document.getElementById('blockMult');
+//функции для открытия и закрытия окошка с формами 
+function showSumBlock() {
+    variableBlockSum.style.display = 'flex';
+    variableBlockSubtr.style.display = 'none';
+    variableBlockDivis.style.display = 'none';
+    variableBlockMult.style.display = 'none';
 }
-function getSubtr() {
-    const number1 = prompt('Введите уменьшаемое','');
-    const number2 = prompt('Введите вычитаемое','');
-    alert(`Разность: ${+number1 - +number2}`);
+function showSubtrBlock() {
+    variableBlockSum.style.display = 'none';
+    variableBlockSubtr.style.display = 'flex';
+    variableBlockDivis.style.display = 'none';
+    variableBlockMult.style.display = 'none';
 }
-function getDivision() {
-    const number1 = prompt('Введите делимое','');
-    const number2 = prompt('Введите делитель','');
-    alert(`Частное: ${+number1 / +number2}`);
+function showDivisionBlock() {
+    variableBlockSum.style.display = 'none';
+    variableBlockSubtr.style.display = 'none';
+    variableBlockDivis.style.display = 'flex';
+    variableBlockMult.style.display = 'none';
 }
-function getMult() {
-    const number1 = prompt('Введите перовый множитель','');
-    const number2 = prompt('Введите второй множитель','');
-    alert(`Произведение: ${+number1 * +number2}`);
+function showMultBlock() {
+    variableBlockSum.style.display = 'none';
+    variableBlockSubtr.style.display = 'none';
+    variableBlockDivis.style.display = 'none';
+    variableBlockMult.style.display = 'flex';
+}
+//функции для подсчета цифр - калькулятор
+function sumCalc() {
+    let a = document.getElementById('input1sum');
+    let b = document.getElementById('input2sum');
+    let result = +a.value + +b.value;
+    document.getElementById('divSumResult').innerHTML = result;
+}
+function subtrCalc() {
+    let a = document.getElementById('input1subtr');
+    let b = document.getElementById('input2subtr');
+    let result = +a.value - +b.value;
+    document.getElementById('divSubtrResult').innerHTML = result;
+}
+function divisCalc() {
+    let a = document.getElementById('input1divis');
+    let b = document.getElementById('input2divis');
+    let result = +a.value / +b.value;
+    document.getElementById('divDivisResult').innerHTML = result;
+}
+function multCalc() {
+    let a = document.getElementById('input1mult');
+    let b = document.getElementById('input2mult');
+    let result = +a.value * +b.value;
+    document.getElementById('divMultResult').innerHTML = result;
 }
