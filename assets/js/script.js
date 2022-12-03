@@ -45,8 +45,12 @@ function subtrCalc() {
 function divisCalc() {
     let a = document.getElementById('input1divis');
     let b = document.getElementById('input2divis');
-    let result = +a.value / +b.value;
-    document.getElementById('divDivisResult').innerHTML = result;
+    if (+b.value == 0) {
+        document.getElementById('divDivisResult').innerHTML = 'На 0 делить нельзя!';
+    } else {
+        let result = +a.value / +b.value;
+        document.getElementById('divDivisResult').innerHTML = result;
+    }
 }
 function multCalc() {
     let a = document.getElementById('input1mult');
