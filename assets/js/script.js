@@ -29,32 +29,52 @@ function showMultBlock() {
     variableBlockDivis.style.display = 'none';
     variableBlockMult.style.display = 'flex';
 }
-//функции для подсчета цифр - калькулятор
-function sumCalc() {
+
+//сам калькулятор
+const btnSum = document.getElementById('btnSum');
+const btnSubtr = document.getElementById('btnSubtr');
+const btnDivis = document.getElementById('btnDivis');
+const btnMult = document.getElementById('btnMult');
+
+btnSum.addEventListener('click', function() {
     let a = document.getElementById('input1sum');
     let b = document.getElementById('input2sum');
-    let result = +a.value + +b.value;
-    document.getElementById('divSumResult').innerHTML = result;
-}
-function subtrCalc() {
+    const resultNumberSum = Calculator.sum(a, b);
+})
+btnSubtr.addEventListener('click', function() {
     let a = document.getElementById('input1subtr');
     let b = document.getElementById('input2subtr');
-    let result = +a.value - +b.value;
-    document.getElementById('divSubtrResult').innerHTML = result;
-}
-function divisCalc() {
+    const resultNumberSubtr = Calculator.subtr(a, b);
+})
+btnDivis.addEventListener('click', function() {
     let a = document.getElementById('input1divis');
     let b = document.getElementById('input2divis');
-    if (+b.value == 0) {
-        document.getElementById('divDivisResult').innerHTML = 'На 0 делить нельзя!';
-    } else {
-        let result = +a.value / +b.value;
-        document.getElementById('divDivisResult').innerHTML = result;
-    }
-}
-function multCalc() {
+    const resultNumberDivis = Calculator.divis(a, b);
+})
+btnMult.addEventListener('click', function () {
     let a = document.getElementById('input1mult');
     let b = document.getElementById('input2mult');
-    let result = +a.value * +b.value;
-    document.getElementById('divMultResult').innerHTML = result;
+    const resultNumberMult = Calculator.mult(a, b);
+})
+class Calculator {
+    static sum(a, b) {
+        let result = +a.value + +b.value;
+        document.getElementById('divSumResult').innerHTML = result;
+    }
+    static subtr(a, b) {
+        let result = +a.value - +b.value;
+        document.getElementById('divSubtrResult').innerHTML = result;
+    }
+    static divis(a, b) {
+        if (+b.value == 0) {
+            document.getElementById('divDivisResult').innerHTML = 'На 0 делить нельзя!';
+            } else {
+            let result = +a.value / +b.value;
+            document.getElementById('divDivisResult').innerHTML = result;
+            }
+    }
+    static mult(a, b) {
+        let result = +a.value * +b.value;
+        document.getElementById('divMultResult').innerHTML = result;
+    }
 }
